@@ -1,24 +1,20 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { Provider } from "react-redux";
+import { SportsStoreDataStore } from "./data/DataStore";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ShopData from "./ShopConnector";
+import React from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={SportsStoreDataStore}>
+      <Router>
+        <Routes>
+          <Route path="/shop" component={ShopData} />
+          <Route path="/" />
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 

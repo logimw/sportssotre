@@ -23,7 +23,7 @@
   "scripts": {
     "start": "npm-run-all --parallel reactstart webservice",
     "reactstart": "react-scripts start",
-    "eslint": "npm run lint -- --fix",
+    "eslint": "npm run lint --fix",
     "webservice": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
